@@ -28,6 +28,13 @@ public class Ponto{
 		p3=p1;
 		System.out.println(p3.getX() + " - " + p3.getY());
 		Ponto p4 = p3;
+		double c1,c2,h;
+		c1 = p1.getX() - p2.getX();
+		c2 = p1.getY() - p2.getY();
+		c1 = c1*c1;
+		c2 = c2*c2;
+		h = Math.sqrt(c1 + c2);
+		System.out.println("Distância:" + h);
 
 		System.out.println("Brian Messias");
 	}
