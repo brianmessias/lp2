@@ -43,8 +43,8 @@ public class Ponto{
 		
 		System.out.println("Exercício 3 - Distância entre p1 e p2");
 		double c1,c2,h;
-		c1 = p1.getX() - p2.getX();
-		c2 = p1.getY() - p2.getY();
+		c2 = p1.getX() - p2.getX();
+		c1 = p1.getY() - p2.getY();
 		c1 = c1*c1;
 		c2 = c2*c2;
 		h = Math.sqrt(c1 + c2);
@@ -57,6 +57,16 @@ public class Ponto{
 		p1.setX(20);
 		p2.setY(40);
 		System.out.println("x = " + r1.getP1().getX() + " y = " + r1.getP2().getY() + "\n");
+		
+		System.out.println("Exercício 5 - Area sob a Reta\n");
+		double c3 = p2.getY();
+		p1.setX(2);
+		p1.setY(2);
+		p2.setX(4);
+		p2.setY(1);
+		r1.setP1(p1);
+		r1.setP2(p2);
+		System.out.println(r1.Area(p1.getX(), p1.getY(), p2.getX(), p2.getY()));
 	}
 
 }
