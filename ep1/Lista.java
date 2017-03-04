@@ -1,9 +1,9 @@
 class No{
 	private int item;
 	private No prox, ant;
-	}
+	
 	public void setItem(int item){
-		this.item = item;		
+		this.item = item;
 	}
 	public int getItem(){
 		return this.item;
@@ -23,34 +23,52 @@ class No{
 }
 public class Lista{
 	private No cabeca = null, aux = null;
-	private int tam;
 	
+	public void listar(){
+		No cursor = cabeca;
+		while (cursor != null){
+			System.out.println(" " + cursor.getItem());
+			cursor = cursor.getProx();
+		}
+	}
 	public void inserir(int item){
+		No novo = new No();
+		novo.setItem(item);
 		if (cabeca == null){
-			cabeca.setItem(item);
-			cabeca.setProx(null);
-			cabeca.setAnt(null);
-			aux = cabeca;
+			cabeca = novo;
+			aux = novo;
 		}else{
-			No novo = new No();
-			novo.setItem(item);
-			novo.setProx(null);
 			novo.setAnt(aux);
+			aux.setProx(novo);
 			aux = novo;
 		}
 	}
-	public void remover(){
-
-	}
-	public boolean pesquisar(int item){
+	public void remover(int item){
 		No cursor = cabeca;
-		while (cursor.getItem() != item && cursor != null){
+		No outro;
+		while  (cursor != null){
+			if (cursor.getItem() == item){
+				outro = cursor.getAnt();
+				outro.setProx(cursor.getProx());
+				cursor.setAnt(outro);
+			}
 			cursor = cursor.getProx();
 		}
-		if (cursor == null){
-			return false;
+	}
+	public void pesquisar(int item){
+		No cursor = cabeca;
+		int aux = 0;
+		while (cursor != null){
+			if(cursor.getItem() == item){
+				aux = 1;
+			}
+			cursor = cursor.getProx();
+		}
+		if(aux == 1){
+			System.out.println(" Pertence a Lista");
 		}else{
-			return true;
+			System.out.println(" Não pertence a Lista");
 		}
 	}
 }
+
