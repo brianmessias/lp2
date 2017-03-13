@@ -1,3 +1,6 @@
+import java.util.Collections;
+import java.util.ArrayList;
+
 public class Principal{
 	public static void main(String[] args){
 		Aluno a = new Aluno();
@@ -20,5 +23,17 @@ public class Principal{
 		Aluno e = new Aluno();
 		e.setNome("Hebert");
 		e.setIdade(31);
+
+		ArrayList<Aluno> lista = new ArrayList<Aluno>();
+		lista.add(a);
+		lista.add(b);
+		lista.add(c);
+		lista.add(d);
+		lista.add(e);
+
+		Collections.sort(lista);
+		for (int i=0; i<5; i++){
+			System.out.println(lista.get(i).getNome() + " - " + lista.get(i).getIdade());
+		}
 	}
 }
