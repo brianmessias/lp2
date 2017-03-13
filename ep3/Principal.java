@@ -24,6 +24,17 @@ public class Principal{
 		e.setNome("Hebert");
 		e.setIdade(31);
 
+		Disciplina um = new Disciplina();
+		um.setNome("LP2");
+		um.setProfessor("Herbert");
+
+		Disciplina dois = new Disciplina();
+		dois.setNome("WEB");
+		dois.setProfessor("Marcelo");
+
+		ArrayList<Nota> notas = new ArrayLista<notas>();
+
+
 		ArrayList<Aluno> lista = new ArrayList<Aluno>();
 		lista.add(a);
 		lista.add(b);
