@@ -32,8 +32,21 @@ public class Principal{
 		dois.setNome("WEB");
 		dois.setProfessor("Marcelo");
 
-		ArrayList<Nota> notas = new ArrayLista<notas>();
+		ArrayList<Nota> notas = new ArrayLista<Nota>();
+		notas.add(new Nota (1, a, um));
+		notas.add(new Nota (2, a, dois));
 
+		notas.add(new Nota (3, b, um));
+		notas.add(new Nota (4, b, dois));
+
+		notas.add(new Nota (5, c, um));
+		notas.add(new Nota (8, c, dois));
+
+		notas.add(new Nota (6, d, um));
+		notas.add(new Nota (2, d, dois));
+
+		notas.add(new Nota (8, e, um));
+		notas.add(new Nota (7, e, dois));
 
 		ArrayList<Aluno> lista = new ArrayList<Aluno>();
 		lista.add(a);
@@ -46,5 +59,7 @@ public class Principal{
 		for (int i=0; i<5; i++){
 			System.out.println(lista.get(i).getNome() + " - " + lista.get(i).getIdade());
 		}
+
+		Collections.sort(notas);
 	}
 }
